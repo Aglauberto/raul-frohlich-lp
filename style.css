@@ -1,0 +1,543 @@
+/* ==========================================================================
+   Design Tokens & Estética Luxo / Ouro | Raul Fröhlich
+   ========================================================================== */
+
+:root {
+  --color-bg-main: #0B0B0A;
+  --color-bg-card: #151412;
+  --color-bg-card-hover: #191815;
+  --color-title: #FAF6EF;
+  --color-body: #D4CDC2;
+  --color-micro: #A69E92;
+  
+  /* Gradientes e Ouro */
+  --gold-primary: #D6B46A;
+  --gold-light: #F3DB9E;
+  --gold-glow: #ECC880;
+  --gold-dark: #A37F38;
+  --gold-gradient: linear-gradient(135deg, #F5DFAB 0%, #D6B46A 45%, #B88F3C 100%);
+  --gold-border: rgba(214, 180, 106, 0.35);
+  --gold-border-glow: rgba(214, 180, 106, 0.6);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--color-bg-main);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--color-bg-main);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(214, 180, 106, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(214, 180, 106, 0.06) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Efeitos Luminosos de Fundo (Ambient Glows)
+   ========================================================================== */
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.top-glow {
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(214, 180, 106, 0.18) 0%, rgba(214, 180, 106, 0) 70%);
+}
+
+.center-glow {
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(214, 180, 106, 0.07) 0%, rgba(214, 180, 106, 0) 70%);
+}
+
+/* ==========================================================================
+   Container Principal Centralizado
+   ========================================================================== */
+
+.page-container {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: max(32px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.main-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Badge de Status / Tag Dourada
+   ========================================================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(214, 180, 106, 0.08);
+  border: 1px solid rgba(214, 180, 106, 0.28);
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--gold-light);
+  box-shadow: 0 0 10px var(--gold-primary);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.badge-text {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ==========================================================================
+   Foto do Raul com Moldura Dourada Iluminada
+   ========================================================================== */
+
+.profile-showcase {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-glow {
+  position: absolute;
+  top: 10px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 180, 106, 0.35) 0%, rgba(214, 180, 106, 0) 70%);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+.profile-ring-outer {
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(145deg, #F6E2B3 0%, #D6B46A 40%, rgba(214, 180, 106, 0.2) 75%, #ECC880 100%);
+  box-shadow: 
+    0 12px 30px -6px rgba(0, 0, 0, 0.9),
+    0 0 24px rgba(214, 180, 106, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.profile-ring-outer:hover {
+  transform: scale(1.03);
+}
+
+.profile-ring-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #0B0B0A;
+  background-color: #151412;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-title);
+  position: relative;
+}
+
+/* ==========================================================================
+   Divisor Dourado Elegante
+   ========================================================================== */
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 240px;
+  margin: 16px 0 24px 0;
+  opacity: 0.85;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(214, 180, 106, 0.6), transparent);
+}
+
+.divider-diamond {
+  font-size: 8px;
+  color: var(--gold-light);
+  filter: drop-shadow(0 0 4px var(--gold-primary));
+}
+
+/* ==========================================================================
+   Título Principal Centralizado
+   ========================================================================== */
+
+.main-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.18;
+  color: var(--color-title);
+  margin-bottom: 22px;
+  letter-spacing: -0.015em;
+  max-width: 520px;
+}
+
+.highlight-gold {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-style: italic;
+  font-weight: 700;
+  filter: drop-shadow(0 2px 14px rgba(214, 180, 106, 0.28));
+}
+
+/* ==========================================================================
+   Copy de Apoio e Parágrafos
+   ========================================================================== */
+
+.copy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+  max-width: 500px;
+}
+
+.copy-body p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+.copy-body .lead-text {
+  color: var(--color-title);
+  font-weight: 500;
+  font-size: 17px;
+}
+
+/* ==========================================================================
+   Card de Confirmação com Contorno Dourado e Profundidade
+   ========================================================================== */
+
+.confirmation-card {
+  width: 100%;
+  background: linear-gradient(180deg, #181714 0%, #12110F 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: 18px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.9),
+    0 0 35px -10px rgba(214, 180, 106, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Borda luminosa no topo do card */
+.confirmation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+}
+
+.action-instruction {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 16.5px;
+  line-height: 1.45;
+  color: var(--color-title);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Botão CTA Principal com Animações Chamativas de Destaque
+   ========================================================================== */
+
+.cta-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 58px;
+  padding: 16px 22px;
+  background: var(--gold-gradient);
+  color: #0B0B0A;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 20px rgba(214, 180, 106, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Animação Contínua de Pulso / Respiração e Glow */
+.pulse-action {
+  animation: cta-pulse-glow 2.8s infinite ease-in-out;
+}
+
+@keyframes cta-pulse-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 
+      0 6px 20px rgba(214, 180, 106, 0.35),
+      0 0 0 0 rgba(214, 180, 106, 0.6);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 
+      0 8px 28px rgba(214, 180, 106, 0.55),
+      0 0 0 10px rgba(214, 180, 106, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 
+      0 6px 20px rgba(214, 180, 106, 0.35),
+      0 0 0 0 rgba(214, 180, 106, 0);
+  }
+}
+
+.cta-button:hover {
+  filter: brightness(1.08);
+  transform: scale(1.03) !important;
+}
+
+.cta-button:active {
+  transform: scale(0.99) !important;
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+/* Efeito Shimmer de Luz que Cruza o Botão Periodicamente */
+.button-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg) translateX(-180%);
+  animation: shimmer-swipe 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shimmer-swipe {
+  0%, 40% {
+    transform: skewX(-25deg) translateX(-180%);
+  }
+  70%, 100% {
+    transform: skewX(-25deg) translateX(320%);
+  }
+}
+
+.whatsapp-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  fill: #0B0B0A;
+  animation: icon-wiggle 3.5s infinite ease-in-out;
+}
+
+@keyframes icon-wiggle {
+  0%, 75%, 100% { transform: rotate(0deg); }
+  80% { transform: rotate(-10deg) scale(1.1); }
+  85% { transform: rotate(10deg) scale(1.1); }
+  90% { transform: rotate(-5deg); }
+  95% { transform: rotate(0deg); }
+}
+
+.cta-text {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Microtexto abaixo do CTA */
+.microtext {
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-micro);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ==========================================================================
+   Responsividade: Desktop e Tablets (>= 768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .page-container {
+    padding-top: 52px;
+    padding-bottom: 56px;
+  }
+
+  .content-wrapper {
+    max-width: 600px;
+  }
+
+  .profile-ring-outer {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 14px;
+  }
+
+  .main-title {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .copy-body {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .copy-body p {
+    font-size: 17px;
+  }
+
+  .copy-body .lead-text {
+    font-size: 18px;
+  }
+
+  .confirmation-card {
+    padding: 30px 28px;
+    border-radius: 20px;
+  }
+
+  .action-instruction {
+    font-size: 18px;
+    margin-bottom: 22px;
+  }
+
+  .cta-button {
+    font-size: 17px;
+    min-height: 62px;
+  }
+}
+
+/* ==========================================================================
+   Responsividade: Telas Pequenas (<= 360px)
+   ========================================================================== */
+
+@media (max-width: 360px) {
+  .main-title {
+    font-size: 26px;
+  }
+
+  .cta-button {
+    font-size: 14.5px;
+    padding: 14px 14px;
+  }
+
+  .profile-ring-outer {
+    width: 110px;
+    height: 110px;
+  }
+}
