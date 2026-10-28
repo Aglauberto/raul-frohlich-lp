@@ -41,10 +41,9 @@ lp-confirmacao/
 
 - **Número ativo:** `+55 51 9739-2166` (`555197392166`)
 - **Mensagem predefinida:**
-  > *Olá, Raul! Agendei minha Sessão Estratégica de Gestão e confirmo minha presença no horário escolhido.*  
-  > *Vou me organizar para participar e conversar sobre os desafios da minha empresa.*
+  > *Olá, Raul! Agendei minha Sessão Estratégica de Gestão e confirmo minha presença no horário escolhido.*
 - **Link gerado:**  
-  `https://wa.me/555197392166?text=Ol%C3%A1%2C%20Raul!%20Agendei%20minha%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20Gest%C3%A3o%20e%20confirmo%20minha%20presen%C3%A7a%20no%20hor%C3%A1rio%20escolhido.%0AVou%20me%20organizar%20para%20participar%20e%20conversar%20sobre%20os%20desafios%20da%20minha%20empresa.`
+  `https://wa.me/555197392166?text=Ol%C3%A1%2C%20Raul!%20Agendei%20minha%20Sess%C3%A3o%20Estrat%C3%A9gica%20de%20Gest%C3%A3o%20e%20confirmo%20minha%20presen%C3%A7a%20no%20hor%C3%A1rio%20escolhido.`
 - **Navegação:** `target="_self"` (mantém a navegação fluida dentro do navegador do Instagram/Facebook e navegadores móveis).
 
 ---

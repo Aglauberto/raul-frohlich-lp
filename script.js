@@ -4,7 +4,7 @@
 
 // Configuração centralizada
 const WHATSAPP_NUMBER = '555197392166';
-const WHATSAPP_MESSAGE = 'Olá, Raul! Agendei minha Sessão Estratégica de Gestão e confirmo minha presença no horário escolhido.\nVou me organizar para participar e conversar sobre os desafios da minha empresa.';
+const WHATSAPP_MESSAGE = 'Olá, Raul! Agendei minha Sessão Estratégica de Gestão e confirmo minha presença no horário escolhido.';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ctaButton = document.getElementById('cta-whatsapp');
